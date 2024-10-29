@@ -47,4 +47,44 @@ badEmailService.Disconnect();
 var emailService = new EmailService();
 emailService.SendEmail();
 #endregion Abstraction
+
+#region Inheritance
+// Let us consider a vehicle class that has common properties and methods for all vehicles.
+// The Vehicle class has properties like Brand, Model, and Year, and methods like Start and Stop.
+var vehicle = new Vehicle()
+{
+    Brand = "Toyota",
+    Model = "Corolla",
+    Year = 2020
+};
+Console.WriteLine($"Vehicle Brand: {vehicle.Brand}");
+
+// The Car class inherits from the Vehicle class and adds specific properties like NumberOfDoors and NumberOfWheels.
+// Hence, the Car class does not need to define the Brand, Model, and Year properties again. It can reuse them from the Vehicle class.
+var car = new Car()
+{
+    Brand = "Toyota",
+    Model = "Corolla",
+    Year = 2020,
+    NumberOfDoors = 4,
+    NumberOfWheels = 4
+};
+
+// The properties and methods of the Vehicle class are accessible from the Car class.
+car.Start();
+car.Stop();
+
+// The Car class can also access its specific properties.
+Console.WriteLine($"Car Brand: {car.Brand}");
+
+// The Vehicle class can be used to create other types of vehicles like a Bike.
+var bike = new Bike()
+{
+    Brand = "Honda",
+    Model = "CBR",
+    Year = 2020,
+    NumberOfWheels = 2
+};
+Console.WriteLine($"Bike Brand: {bike.Brand}");
+#endregion Inheritance
 #endregion OopPrinciples
