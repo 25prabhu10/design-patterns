@@ -87,4 +87,50 @@ var bike = new Bike()
 };
 Console.WriteLine($"Bike Brand: {bike.Brand}");
 #endregion Inheritance
+
+#region Polymorphism
+// Let us consider a Vehicle class with a Start method that starts the vehicle.
+// The Car class and Bike class inherit from the Vehicle class and override the Start method to provide their own implementation.
+// This helps in achieving polymorphism where the Start method behaves differently based on the type of vehicle.
+var vehicle1 = new Vehicle();
+var car1 = new Car();
+var bike1 = new Bike();
+
+vehicle1.Start(); // Output: Vehicle started
+car1.Start(); // Output: Car started
+bike1.Start(); // Output: Bike started
+
+// Polymorphism allows us to treat objects of different classes in a similar way.
+List<object> oVehicles = [];
+oVehicles.Add(new Car { Brand = "Toyota", Model = "Corolla", Year = 2020, NumberOfDoors = 4, NumberOfWheels = 4 });
+oVehicles.Add(new Bike { Brand = "Honda", Model = "CBR", Year = 2020, NumberOfWheels = 2 });
+
+// Vehicle inspection
+foreach (var _vehicle in oVehicles)
+{
+    if (_vehicle is Car)
+    {
+        var _car = (Car)_vehicle;
+        _car.Start();
+    }
+    else if (_vehicle is Bike)
+    {
+        var _bike = (Bike)_vehicle;
+        _bike.Start();
+    }
+}
+
+// The above foreach loop has a lot of boilerplate code to check the type of each vehicle and cast it to the correct type.
+List<Vehicle> vehicles = [];
+vehicles.Add(new Car { Brand = "Toyota", Model = "Corolla", Year = 2020, NumberOfDoors = 4, NumberOfWheels = 4 });
+vehicles.Add(new Bike { Brand = "Honda", Model = "CBR", Year = 2020, NumberOfWheels = 2 });
+
+// Vehicle inspection
+// The Start method of each vehicle will be called based on the actual type of the vehicle (Car or Bike).
+// Treating different types of vehicles
+foreach (var _vehicle in vehicles)
+{
+    _vehicle.Start();
+}
+#endregion Polymorphism
 #endregion OopPrinciples
