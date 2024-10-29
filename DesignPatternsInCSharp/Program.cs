@@ -1,4 +1,7 @@
 ﻿using DesignPatternsInCSharp.src.OopPrinciples.Encapsulation;
+using DesignPatternsInCSharp.src.OopPrinciples.Abstraction;
+using DesignPatternsInCSharp.src.OopPrinciples.Inheritance;
+using DesignPatternsInCSharp.src.CSharpConcepts;
 
 #region OopPrinciples
 #region Encapsulation
@@ -134,3 +137,14 @@ foreach (var _vehicle in vehicles)
 }
 #endregion Polymorphism
 #endregion OopPrinciples
+
+#region CSharpConcepts
+// `virtual` Methods
+VirtualMethod.Run();
+
+// `abstract` Methods
+AbstractMethod.Run();
+
+// Method Hiding
+MethodHiding.Run();
+#endregion CSharpConcepts
