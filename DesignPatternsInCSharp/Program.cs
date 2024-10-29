@@ -29,4 +29,22 @@ Console.WriteLine($"Balance: {bankAccount.GetBalance()}");
 bankAccount.Deposit(-100); // This will throw an ArgumentException
 bankAccount.Withdraw(200); // This will throw an InvalidOperationException
 #endregion Encapsulation
+
+#region Abstraction
+// Let us consider an email service class that has methods to send an email, connect to the email server, authenticate, and disconnect.
+// The BadEmailService class has all these methods in a single class.
+var badEmailService = new BadEmailService();
+badEmailService.Connect();
+badEmailService.Authenticate();
+badEmailService.SendEmail();
+badEmailService.Disconnect();
+
+// This means that the user has to know the internal details of the email service class to use it.
+// To send an email, the user has to call the Connect, Authenticate, SendEmail, and Disconnect methods in the correct order.
+// This is not ideal as it exposes the internal details of the email service class to the user.
+// We can improve this by using abstraction.
+// We can simplify the email service class by handling the internal details within the class and exposing only the SendEmail method to the user.
+var emailService = new EmailService();
+emailService.SendEmail();
+#endregion Abstraction
 #endregion OopPrinciples
