@@ -2,7 +2,8 @@
 // using DesignPatternsInCSharp.src.OopPrinciples.Abstraction;
 // using DesignPatternsInCSharp.src.OopPrinciples.Inheritance;
 // using DesignPatternsInCSharp.src.OopPrinciples.Coupling.BadExample;
-using DesignPatternsInCSharp.src.OopPrinciples.Coupling;
+// using DesignPatternsInCSharp.src.OopPrinciples.Coupling;
+using DesignPatternsInCSharp.src.OopPrinciples.Composition;
 // using DesignPatternsInCSharp.src.CSharpConcepts;
 
 // #region OopPrinciples
@@ -160,6 +161,14 @@ using DesignPatternsInCSharp.src.OopPrinciples.Coupling;
 // var smsOrderPlace = new OrderPlace(new SmsSender());
 // smsOrderPlace.PlaceOrder();
 // #endregion Coupling
+
+#region Composition
+// Composition is a design technique in object-oriented programming where a class contains an object of another class.
+// This allows the class to reuse the functionality of the other class without inheriting from it.
+// Let us consider an example of composition between the Car and Engine classes.
+var car = new Car();
+car.Drive();
+#endregion Composition
 // #endregion OopPrinciples
 
 // #region CSharpConcepts
