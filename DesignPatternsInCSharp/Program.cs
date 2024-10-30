@@ -1,6 +1,8 @@
 ﻿// using DesignPatternsInCSharp.src.OopPrinciples.Encapsulation;
 // using DesignPatternsInCSharp.src.OopPrinciples.Abstraction;
 // using DesignPatternsInCSharp.src.OopPrinciples.Inheritance;
+// using DesignPatternsInCSharp.src.OopPrinciples.Coupling.BadExample;
+using DesignPatternsInCSharp.src.OopPrinciples.Coupling;
 // using DesignPatternsInCSharp.src.CSharpConcepts;
 
 // #region OopPrinciples
@@ -136,6 +138,28 @@
 //     _vehicle.Start();
 // }
 // #endregion Polymorphism
+
+// #region Coupling
+// // Tight Coupling
+// // Tight coupling occurs when a class is dependent on another class and knows the internal details of that class.
+// // This makes the classes less flexible and harder to maintain.
+// // Let us consider an example of tight coupling between the OrderPlace and EmailSender classes.
+// var orderPlace = new OrderPlace();
+// orderPlace.PlaceOrder();
+
+// // Loose Coupling
+// // Loose coupling occurs when a class is dependent on another class through an interface or an abstract class.
+// // This makes the classes more flexible and easier to maintain.
+// // Let us consider an example of loose coupling between the OrderPlace and INotificationSender classes.
+// // If user wants to send notification through email, they can use EmailSender class.
+// var emailOrderPlace = new OrderPlace(new EmailSender());
+// emailOrderPlace.PlaceOrder();
+
+// // If user wants to send notification through SMS, they can use SMSSender class.
+// // No changes are required in the OrderPlace class.
+// var smsOrderPlace = new OrderPlace(new SmsSender());
+// smsOrderPlace.PlaceOrder();
+// #endregion Coupling
 // #endregion OopPrinciples
 
 // #region CSharpConcepts
