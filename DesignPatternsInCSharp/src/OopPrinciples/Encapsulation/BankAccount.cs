@@ -2,40 +2,40 @@ namespace DesignPatternsInCSharp.src.OopPrinciples.Encapsulation;
 
 public class BankAccount
 {
-  private decimal balance;
+    private decimal balance;
 
-  public BankAccount(decimal balance)
-  {
-    Deposit(balance);
-  }
-
-  public void Deposit(decimal amount)
-  {
-    if (amount < 0)
+    public BankAccount(decimal balance)
     {
-      throw new ArgumentException("Amount cannot be negative");
+        Deposit(balance);
     }
 
-    balance += amount;
-  }
-
-  public void Withdraw(decimal amount)
-  {
-    if (amount < 0)
+    public void Deposit(decimal amount)
     {
-      throw new ArgumentException("Amount cannot be negative");
+        if (amount < 0)
+        {
+            throw new ArgumentException("Amount cannot be negative");
+        }
+
+        balance += amount;
     }
 
-    if (amount > balance)
+    public void Withdraw(decimal amount)
     {
-      throw new InvalidOperationException("Insufficient balance");
+        if (amount < 0)
+        {
+            throw new ArgumentException("Amount cannot be negative");
+        }
+
+        if (amount > balance)
+        {
+            throw new InvalidOperationException("Insufficient balance");
+        }
+
+        balance -= amount;
     }
 
-    balance -= amount;
-  }
-
-  public decimal GetBalance()
-  {
-    return balance;
-  }
+    public decimal GetBalance()
+    {
+        return balance;
+    }
 }
